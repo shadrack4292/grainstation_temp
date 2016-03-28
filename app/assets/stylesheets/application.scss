@@ -1,6 +1,11 @@
-//@import "agency";
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab|Droid+Serif|Kaushan+Script|Montserrat);
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import "agency";
+@import "pages";
+
+section{
+  min-height: 700px;
+}
