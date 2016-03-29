@@ -1,3 +1,4 @@
+<% menu.each do |m| %>
 <div class="menu-modal modal fade" id="menuModal<%= m.id %>" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-content">
         <div class="close-modal" data-dismiss="modal">
@@ -15,17 +16,11 @@
                         <p class="item-intro text-muted"><%= m.price %></p>
                         <%= image_tag 'bratwurst.jpg', class: 'img-responsive img-centered', alt: '' %>
                         <p><%= m.description %></p>
-                        <p>
-                            <strong>Want these icons in this menu item sample?</strong>You can download 60 of them for free, courtesy of <a href="https://getdpd.com/cart/hoplink/18076?referrer=bvbo4kax5k8ogc">RoundIcons.com</a>, or you can purchase the 1500 icon set <a href="https://getdpd.com/cart/hoplink/18076?referrer=bvbo4kax5k8ogc">here</a>.</p>
-                        <ul class="list-inline">
-                            <li>Date: July 2014</li>
-                            <li>Client: Round Icons</li>
-                            <li>Category: Graphic Design</li>
-                        </ul>
-                        <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Menu Item</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<% end %>
