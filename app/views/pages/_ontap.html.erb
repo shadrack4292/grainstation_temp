@@ -1,3 +1,26 @@
 <section id="ontap">
-  <h1>On Tap</h1>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2 class="section-heading">on Tap</h2>
+        <h3 class="section-subheading text-muted"></h3>
+      </div><!-- col-lg-12-->
+    </div><!-- row -->
+    <% menu.each do |m| %>
+    <div class="col-md-4 col-sm-6 menu-item">
+      <%= link_to "#menuModal#{m.id}", class: 'menu-link', data: { toggle: 'modal' } do %>
+        <div class="menu-hover">
+          <div class="menu-hover-content">
+            <%= icon('plus', class: 'fa-3x') %>
+          </div><!-- menu-hover-content -->
+        </div><!-- menu-hover -->
+        <%= image_tag 'bratwurst.jpg', class: 'img-responsive', alt: '' %>
+      <% end %><!-- end link_to -->
+      <div class="menu-caption">
+        <h4><%= m.name %></h4>
+        <p class="text-muted"><%= m.description %></p>
+      </div><!-- menu-caption -->
+    </div><!-- menu-item -->
+    <% end %>
+  </div>
 </section>
