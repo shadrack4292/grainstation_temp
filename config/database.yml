@@ -29,25 +29,18 @@
   encoding: unicode
   database: grainstation
   pool: 5
-  username: elias
-  password:
-
 
  test: &test
   adapter: postgresql
   encoding: unicode
   database: grainstation_test
   pool: 5
-  username: elias
-  password:
 
  production:
   adapter: postgresql
   encoding: unicode
   database: grainstation_production
   pool: 5
-  username: elias
-  password:
 
  cucumber:
   <<: *test
