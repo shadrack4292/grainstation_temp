@@ -7,20 +7,6 @@
       </div><!-- col-lg-12-->
     </div><!-- row -->
     <% menu.each do |m| %>
-    <div class="col-md-4 col-sm-6 menu-item">
-      <%= link_to "#menuModal#{m.id}", class: 'menu-link', data: { toggle: 'modal' } do %>
-        <div class="menu-hover">
-          <div class="menu-hover-content">
-            <%= icon('plus', class: 'fa-3x') %>
-          </div><!-- menu-hover-content -->
-        </div><!-- menu-hover -->
-        <%= image_tag 'bratwurst.jpg', class: 'img-responsive', alt: '' %>
-      <% end %><!-- end link_to -->
-      <div class="menu-caption">
-        <h4><%= m.name %></h4>
-        <p class="text-muted"><%= m.description %></p>
-      </div><!-- menu-caption -->
-    </div><!-- menu-item -->
     <% end %>
   </div>
 </section>
