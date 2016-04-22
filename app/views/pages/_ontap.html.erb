@@ -5,28 +5,44 @@
         <h2 class="section-heading">on Tap</h2>
         <h3 class="section-subheading text-muted"></h3>
       </div><!-- col-lg-12-->
+      <div id="tapCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+      <% tap.each do |t| %>
+        <li data-target="#tapCarousel" data-slide-to="<%= t.id - 1 %>"></li>
+      <% end %>
+      </ol>
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner" role="listbox">
+        <% tap.each do |t| %>
+        <div class="item">
+          <%= image_tag "draft_beer/alaskan.png", alt: "Alaskan" %>
+          <div class="carousel-caption">
+            <h3><%= t.name %></h3>
+            <p><%= t.description %></p>
+          </div>
+        </div>
+        <% end %>
+
+      </div>
+
+      <div class="col-lg-6 text-center tap-list">
+        <ul>
+          <% tap.each do |t| %>
+          <li><%= t.name %></li>
+          <% end %>
+        </ul>
+      </div>
+      <div class="col-lg-6 text-center">
+        <ul>
+          <% tap.each do |t| %>
+          <% end %>
+        </ul>
+      </div>
+
     </div><!-- row -->
   </div>
-  <div id="tapCarousel" class="carousel slide" data-ride="carousel">
-  <!-- Indicators -->
-  <% tap.each do |t| %>
-  <ol class="carousel-indicators">
-    <li data-target="#tapCarousel" data-slide-to="<%= t.id - 1 %>"></li>
-  </ol>
-
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner" role="listbox">
-
-    <div class="item">
-      <%= image_tag "draft_beer/alaskan.png", alt: "Alaskan", size: "1040 x 1040" %>
-      <div class="carousel-caption">
-        <h3><%= t.name %></h3>
-        <p><%= t.description %></p>
-      </div>
-    </div>
-
-  </div>
-  <% end %>
 
   <!-- Left and right controls -->
   <a class="left carousel-control" href="#tapCarousel" role="button" data-slide="prev">
