@@ -6,7 +6,37 @@
         <h3 class="section-subheading text-muted"></h3>
       </div><!-- col-lg-12-->
     </div><!-- row -->
-    <% menu.each do |m| %>
-    <% end %>
   </div>
+  <div id="tapCarousel" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <% tap.each do |t| %>
+  <ol class="carousel-indicators">
+    <li data-target="#tapCarousel" data-slide-to="<%= t.id - 1 %>"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+
+    <div class="item">
+      <%= image_tag "draft_beer/alaskan.png", alt: "Alaskan", size: "1040 x 1040" %>
+      <div class="carousel-caption">
+        <h3><%= t.name %></h3>
+        <p><%= t.description %></p>
+      </div>
+    </div>
+
+  </div>
+  <% end %>
+
+  <!-- Left and right controls -->
+  <a class="left carousel-control" href="#tapCarousel" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#tapCarousel" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
 </section>

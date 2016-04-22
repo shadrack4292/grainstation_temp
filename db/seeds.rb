@@ -20,3 +20,11 @@ menu4 = Menu.create(name: 'schnitzel sandwich', description: 'with Pommes. Crisp
 
 menu5 = Menu.create(name: 'philly cheesesteak', description: 'with Pommes Sirloin Beef, grilled onions and bell peppers, with house Philly sauce, and American Swiss cheese served on a steak roll.
         Individual Philly for $5.99', price: 7.99)
+
+tap1 = Tap.create(name: 'Santa Fe NutBrown', description: 'beer made in santa fe', percentage: 5.2, price: 4)
+
+tap2 = Tap.create(name: 'Santa Fe Pale Ale', description: 'beer made in santa fe', percentage: 5.2, price: 4)
+
+tap3 = Tap.create(name: 'Santa Fe Happy Camper', description: 'beer made in santa fe', percentage: 5.2, price: 4)
+
+tap4 = Tap.create(name: 'Santa Fe Penn Porter', description: 'beer made in santa fe', percentage: 5.2, price: 4)
