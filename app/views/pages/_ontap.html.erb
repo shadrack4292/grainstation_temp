@@ -25,7 +25,7 @@
           <div class="carousel-inner" role="listbox">
             <% tap.each do |t| %>
               <div class="<%= t.id == 1? 'item active' : 'item' %>">
-                <%= image_tag 'draft_beer/founders.png', alt: 'alaskan beer' %>
+                <%= image_tag 'draft_beer/founders.png', alt: 'alaskan beer', size: '200 x 200' %>
                 <div class="carousel-caption">
                   <h4><%= t.name %></h4>
                   <p><%= t.description %></p>
