@@ -52,7 +52,7 @@
       <div class="col-lg-6 tap-list" id="ontapList">
         <ul>
           <% tap.each do |t| %>
-            <li><%= t.name %></li>
+            <li><%= link_to t.name, '#ontap' %></li>
           <% end %>
         </ul>
       </div><!-- col-lg-6 tap-list -->
