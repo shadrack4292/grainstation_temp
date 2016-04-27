@@ -1,0 +1,19 @@
+#ontap{
+  background-color: #eee;
+  min-height: 700px;
+
+  #ontapCarousel{
+    .inner-carousel{
+      min-height: 700px;
+    }
+
+  }
+
+  #ontapList{
+    ul{
+      list-style-type: none;
+      decoration: none;
+    }
+  }
+
+}

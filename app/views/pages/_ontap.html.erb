@@ -4,55 +4,59 @@
       <div class="col-lg-12 text-center">
         <h2 class="section-heading">on Tap</h2>
         <h3 class="section-subheading text-muted"></h3>
-      </div><!-- col-lg-12-->
-      <div id="tapCarousel" class="carousel slide" data-ride="carousel">
-      <!-- Indicators -->
-      <ol class="carousel-indicators">
-      <% tap.each do |t| %>
-        <li data-target="#tapCarousel" data-slide-to="<%= t.id - 1 %>"></li>
-      <% end %>
-      </ol>
+      </div><!-- col-lg-12 text-center -->
+    </div><!-- row -->
 
-      <!-- Wrapper for slides -->
-      <div class="carousel-inner" role="listbox">
-        <% tap.each do |t| %>
-        <div class="item">
-          <%= image_tag "draft_beer/alaskan.png", alt: "Alaskan" %>
-          <div class="carousel-caption">
-            <h3><%= t.name %></h3>
-            <p><%= t.description %></p>
-          </div>
-        </div>
-        <% end %>
+    <div class="row tap-info">
 
-      </div>
+      <!-- Carousel -->
 
-      <div class="col-lg-6 text-center tap-list">
+      <div class="col-lg-6">
+        <div class="carousel slide" id="ontapCarousel" data-ride="carousel">
+
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+            <% tap.each do |t| %>
+              <li data-target="ontapCarousel" data-slide-to="<%= t.id - 1 %>" class="<%= t.id == 1? 'active' : 'haha' %>"></li>
+            <% end %>
+          </ol>
+
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner" role="listbox">
+            <% tap.each do |t| %>
+              <div class="<%= t.id == 1? 'item active' : 'item' %>">
+                <%= image_tag 'draft_beer/founders.png', alt: 'alaskan beer' %>
+                <div class="carousel-caption">
+                  <h4><%= t.name %></h4>
+                  <p><%= t.description %></p>
+                </div><!-- carousel-caption -->
+              </div><!-- item -->
+            <% end %>
+          </div><!-- carousel-inner -->
+
+          <!-- Controls -->
+          <a class="left carousel-control" href="#ontapCarousel" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" href="#ontapCarousel" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+
+        </div><!-- carousel slide -->
+      </div><!-- col-lg-6 -->
+
+      <!-- Drink list -->
+
+      <div class="col-lg-6 tap-list" id="ontapList">
         <ul>
           <% tap.each do |t| %>
-          <li><%= t.name %></li>
+            <li><%= t.name %></li>
           <% end %>
         </ul>
-      </div>
-      <div class="col-lg-6 text-center">
-        <ul>
-          <% tap.each do |t| %>
-          <% end %>
-        </ul>
-      </div>
+      </div><!-- col-lg-6 tap-list -->
 
     </div><!-- row -->
-  </div>
-
-  <!-- Left and right controls -->
-  <a class="left carousel-control" href="#tapCarousel" role="button" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="right carousel-control" href="#tapCarousel" role="button" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
-
+  </div><!-- container -->
 </section>
