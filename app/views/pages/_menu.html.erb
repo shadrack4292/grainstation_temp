@@ -67,12 +67,12 @@
     <div class="container">
       <div class="row">
         <% menu.each do |m| %>
-        <div class="col-lg-3 col-lg-offset-1">
+        <div class="col-lg-2 col-lg-offset-1">
           <div class="modal-body">
             <!-- Project Details Go Here -->
             <h4><%= m.name %></h4>
-            <p class="item-intro text-muted"><%= m.price %></p>
-            <%= image_tag m.img_url, class: 'img-responsive img-centered', alt: '' %>
+            <p class="item-intro text-muted">regular</p>
+            <%= image_tag m.img_url, class: 'img-responsive img-centered item', alt: '' %>
             <p><%= m.description %></p>
           </div>
         </div>

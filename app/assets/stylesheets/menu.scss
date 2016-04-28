@@ -298,7 +298,18 @@
   }
 }
 
+#menuModal{
+  height:100%;
+}
 .modal-header{
   background-color: white;
   z-index: 20;
+}
+
+.modal-body{
+  .item{
+    align: 'center';
+    width: 150px;
+    height: 100px;
+  }
 }
