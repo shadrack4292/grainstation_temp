@@ -46,7 +46,33 @@
 
         </div><!-- carousel slide -->
       </div><!-- col-lg-12 -->
+      <%= link_to 'Full Menu List', '#menuModal', class: 'menu-list-btn btn col-lg-12' %>
 
     </div><!-- row -->
   </div><!-- container -->
 </section>
+
+<div class="ontap-modal modal fade" id="menuModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-content">
+        <div class="close-modal" data-dismiss="modal">
+            <div class="lr">
+                <div class="rl">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <div class="modal-body">
+                        <!-- Project Details Go Here -->
+                        <h2><%= m.name %></h2>
+                        <p class="item-intro text-muted"><%= m.price %></p>
+                        <%= image_tag m.img_url, class: 'img-responsive img-centered', alt: '' %>
+                        <p><%= m.description %></p>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Menu Item</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
