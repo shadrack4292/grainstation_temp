@@ -46,33 +46,38 @@
 
         </div><!-- carousel slide -->
       </div><!-- col-lg-12 -->
-      <%= link_to 'Full Menu List', '#menuModal', class: 'menu-list-btn btn col-lg-12' %>
+      <%= link_to 'Full Menu List', '#menuModal', class: 'menu-list-btn btn col-lg-12', data: {toggle: 'modal'} %>
 
     </div><!-- row -->
   </div><!-- container -->
 </section>
 
-<div class="ontap-modal modal fade" id="menuModal" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-content">
-        <div class="close-modal" data-dismiss="modal">
-            <div class="lr">
-                <div class="rl">
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2">
-                    <div class="modal-body">
-                        <!-- Project Details Go Here -->
-                        <h2><%= m.name %></h2>
-                        <p class="item-intro text-muted"><%= m.price %></p>
-                        <%= image_tag m.img_url, class: 'img-responsive img-centered', alt: '' %>
-                        <p><%= m.description %></p>
-                        <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Menu Item</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+<div class="modal fade" id="menuModal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <h2 class="modal-title">Full Menu List</h2>
     </div>
+    <div class="close-modal" data-dismiss="modal">
+      <div class="lr">
+        <div class="rl">
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <% menu.each do |m| %>
+        <div class="col-lg-3 col-lg-offset-1">
+          <div class="modal-body">
+            <!-- Project Details Go Here -->
+            <h4><%= m.name %></h4>
+            <p class="item-intro text-muted"><%= m.price %></p>
+            <%= image_tag m.img_url, class: 'img-responsive img-centered', alt: '' %>
+            <p><%= m.description %></p>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>

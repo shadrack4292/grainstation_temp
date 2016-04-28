@@ -231,3 +231,74 @@
   background-color: #ddd;
   color: #222;
 }
+
+#menu .ontap-item {
+  margin: 0 0 15px;
+  right: 0;
+}
+#menu .ontap-item .ontap-link {
+  display: block;
+  position: relative;
+  max-width: 400px;
+  margin: 0 auto;
+}
+#menu .ontap-item .ontap-link .ontap-hover {
+  background: rgba(254, 209, 54, 0.9);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: all ease 0.5s;
+  -webkit-transition: all ease 0.5s;
+  -moz-transition: all ease 0.5s;
+}
+#menu .ontap-item .ontap-link .ontap-hover:hover {
+  opacity: 1;
+}
+#menu .ontap-item .ontap-link .ontap-hover .ontap-hover-content {
+  position: absolute;
+  width: 100%;
+  height: 20px;
+  font-size: 20px;
+  text-align: center;
+  top: 50%;
+  margin-top: -12px;
+  color: white;
+}
+#menu .ontap-item .ontap-link .ontap-hover .ontap-hover-content i {
+  margin-top: -12px;
+}
+#menu .ontap-item .ontap-link .ontap-hover .ontap-hover-content h3,
+#menu .ontap-item .ontap-link .ontap-hover .ontap-hover-content h4 {
+  margin: 0;
+}
+#menu .ontap-item .ontap-caption {
+  max-width: 400px;
+  margin: 0 auto;
+  background-color: white;
+  text-align: center;
+  padding: 25px;
+}
+#menu .ontap-item .ontap-caption h4 {
+  text-transform: none;
+  margin: 0;
+}
+#menu .ontap-item .ontap-caption p {
+  font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: italic;
+  font-size: 16px;
+  margin: 0;
+}
+#menu * {
+  z-index: 2;
+}
+@media (min-width: 767px) {
+  #menu .ontap-item {
+    margin: 0 0 30px;
+  }
+}
+
+.modal-header{
+  background-color: white;
+  z-index: 20;
+}
