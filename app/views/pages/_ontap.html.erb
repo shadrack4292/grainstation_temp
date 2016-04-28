@@ -1,58 +1,33 @@
-<section id="ontap">
+<section id="ontap", class="bg-light-gray">
   <div class="container">
     <div class="row">
       <div class="col-lg-12 text-center">
-        <h2 class="section-heading">on Tap</h2>
+        <h2 class="section-heading">On Tap</h2>
         <h3 class="section-subheading text-muted"></h3>
       </div><!-- col-lg-12-->
-      <div id="tapCarousel" class="carousel slide" data-ride="carousel">
-      <!-- Indicators -->
-      <ol class="carousel-indicators">
-      <% tap.each do |t| %>
-        <li data-target="#tapCarousel" data-slide-to="<%= t.id - 1 %>"></li>
-      <% end %>
-      </ol>
-
-      <!-- Wrapper for slides -->
-      <div class="carousel-inner" role="listbox">
-        <% tap.each do |t| %>
-        <div class="item">
-          <%= image_tag "draft_beer/alaskan.png", alt: "Alaskan" %>
-          <div class="carousel-caption">
-            <h3><%= t.name %></h3>
-            <p><%= t.description %></p>
-          </div>
-        </div>
-        <% end %>
-
-      </div>
-
-      <div class="col-lg-6 text-center tap-list">
-        <ul>
-          <% tap.each do |t| %>
-          <li><%= t.name %></li>
-          <% end %>
-        </ul>
-      </div>
-      <div class="col-lg-6 text-center">
-        <ul>
-          <% tap.each do |t| %>
-          <% end %>
-        </ul>
-      </div>
-
     </div><!-- row -->
-  </div>
+    <% tap.each do |m| %>
 
-  <!-- Left and right controls -->
-  <a class="left carousel-control" href="#tapCarousel" role="button" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="right carousel-control" href="#tapCarousel" role="button" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
+    <div class="col-md-4 col-sm-6 ontap-item">
+      <%= link_to "#ontapModal#{m.id}", class: 'ontap-link', data: { toggle: 'modal' } do %>
 
+        <div class="ontap-hover">
+          <div class="ontap-hover-content">
+            <%= icon('plus', class: 'fa-3x') %>
+          </div><!-- ontap-hover-content -->
+        </div><!-- ontap-hover -->
+        <div class="ontap-img text-center">
+          <%= image_tag m.img_url, class: 'img-responsive item', alt: m.name %>
+        </div>
+      <% end %><!-- end link_to -->
+
+      <div class="ontap-caption">
+        <h4><%= m.name %></h4>
+        <p class="text-muted"><%= m.description %></p>
+      </div><!-- ontap-caption -->
+
+    </div><!-- col-md-4 col-sm-6 ontap-item -->
+
+    <% end %>
+  </div><!-- container -->
 </section>

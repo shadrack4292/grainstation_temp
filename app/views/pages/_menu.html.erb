@@ -1,32 +1,83 @@
-<section id="menu", class="bg-light-gray">
+<section id="menu">
   <div class="container">
     <div class="row">
       <div class="col-lg-12 text-center">
         <h2 class="section-heading">Menu</h2>
         <h3 class="section-subheading text-muted"></h3>
-      </div><!-- col-lg-12-->
+      </div><!-- col-lg-12 text-center -->
     </div><!-- row -->
-    <% menu.each do |m| %>
 
-    <div class="col-md-4 col-sm-6 menu-item">
-      <%= link_to "#menuModal#{m.id}", class: 'menu-link', data: { toggle: 'modal' } do %>
+    <div class="row menu-info">
 
-        <div class="menu-hover">
-          <div class="menu-hover-content">
-            <%= icon('plus', class: 'fa-3x') %>
-          </div><!-- menu-hover-content -->
-        </div><!-- menu-hover -->
-        <%= image_tag 'bratwurst.jpg', class: 'img-responsive', alt: '' %>
+      <!-- Carousel -->
 
-      <% end %><!-- end link_to -->
+      <div class="col-lg-12">
+        <div class="carousel slide" id="menuCarousel" data-ride="carousel">
 
-      <div class="menu-caption">
-        <h4><%= m.name %></h4>
-        <p class="text-muted"><%= m.description %></p>
-      </div><!-- menu-caption -->
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+            <% menu.each do |t| %>
+              <li data-target="menuCarousel" data-slide-to="<%= t.id - 1 %>" class="<%= t.id == 1? 'active' : 'haha' %>"></li>
+            <% end %>
+          </ol>
 
-    </div><!-- menu-item -->
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner" role="listbox">
+            <% menu.each do |t| %>
+              <div class="<%= t.id == 1? 'item active' : 'item' %>">
+                <%= image_tag t.img_url, alt: t.name %>
+                <div class="carousel-caption">
+                  <h4><%= t.name %></h4>
+                  <p><%= t.description %></p>
+                </div><!-- carousel-caption -->
+              </div><!-- item -->
+            <% end %>
+          </div><!-- carousel-inner -->
 
-    <% end %>
+          <!-- Controls -->
+          <a class="left carousel-control" href="#menuCarousel" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" href="#menuCarousel" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+
+        </div><!-- carousel slide -->
+      </div><!-- col-lg-12 -->
+      <%= link_to 'Full Menu List', '#menuModal', class: 'menu-list-btn btn col-lg-12', data: {toggle: 'modal'} %>
+
+    </div><!-- row -->
   </div><!-- container -->
 </section>
+
+<div class="modal fade" id="menuModal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <h2 class="modal-title">Full Menu List</h2>
+    </div>
+    <div class="close-modal" data-dismiss="modal">
+      <div class="lr">
+        <div class="rl">
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <% menu.each do |m| %>
+        <div class="col-lg-2 col-lg-offset-1">
+          <div class="modal-body">
+            <!-- Project Details Go Here -->
+            <h4><%= m.name %></h4>
+            <p class="item-intro text-muted">regular</p>
+            <%= image_tag m.img_url, class: 'img-responsive img-centered item', alt: '' %>
+            <p><%= m.description %></p>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
