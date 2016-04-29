@@ -11,7 +11,7 @@
 
       <!-- Carousel -->
 
-      <div class="col-lg-12">
+      <div class="col-lg-12 col-md-12">
         <div class="carousel slide" id="menuCarousel" data-ride="carousel">
 
           <!-- Indicators -->
@@ -46,7 +46,7 @@
 
         </div><!-- carousel slide -->
       </div><!-- col-lg-12 -->
-      <%= link_to 'Full Menu List', '#menuModal', class: 'menu-list-btn btn col-lg-12', data: {toggle: 'modal'} %>
+      <%= link_to 'Full Menu List', '#menuModal', class: 'menu-list-btn btn col-lg-12 col-md-12 col-xs-12', data: {toggle: 'modal'} %>
 
     </div><!-- row -->
   </div><!-- container -->
@@ -67,11 +67,11 @@
     <div class="container">
       <div class="row">
         <% menu.each do |m| %>
-        <div class="col-lg-2 col-lg-offset-1">
+        <div class="col-lg-2 col-lg-offset-1 col-md-6 col-xs-12">
           <div class="modal-body">
             <!-- Project Details Go Here -->
             <h4><%= m.name %></h4>
-            <p class="item-intro text-muted">regular</p>
+            <p class="item-intro text-muted text-center">regular</p>
             <%= image_tag m.img_url, class: 'img-responsive img-centered item', alt: '' %>
             <p><%= m.description %></p>
           </div>
