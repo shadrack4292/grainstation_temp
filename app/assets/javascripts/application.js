@@ -13,4 +13,7 @@ $(document).ready(function(){
   $('#menuModal').on('shown.bs.modal', function () {
     $('.modal-title').focus()
   });
+  if (!$.browser.webkit) {
+      $('.container').jScrollPane();
+  }
 });

@@ -12,3 +12,12 @@
 section{
   min-height: 800px;
 }
+
+@media screen
+  and (min-height: 300px)
+  and (orientation: portrait) {
+  font-size: 2em;
+  section{
+    min-height: 1500px;
+  }
+}
